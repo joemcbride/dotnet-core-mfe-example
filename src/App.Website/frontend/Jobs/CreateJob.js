@@ -1,5 +1,7 @@
 import { gql, useMutation } from '@apollo/client'
 import { useFormik } from 'formik'
+import Header from '../components/Header'
+import SubmitButton from '../components/SubmitButton'
 
 const CREATE_JOB_MUTATION = gql`
   mutation CreateJob($dataFileOnly: Boolean!) {
@@ -41,17 +43,27 @@ export default function CreateJob() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div>
-        <input
-          id="dataFileOnly"
-          name="dataFileOnly"
-          type="checkbox"
-          onChange={formik.handleChange}
-          checked={formik.values.dataFileOnly}
-        />
-        <label htmlFor="dataFileOnly">Create Data File Only</label>
+      <Header>Create Job</Header>
+      <div className="relative flex items-start border-b border-gray-900/10 pb-5">
+        <div className="flex h-6 items-center">
+          <input
+            id="dataFileOnly"
+            name="dataFileOnly"
+            onChange={formik.handleChange}
+            checked={formik.values.dataFileOnly}
+            type="checkbox"
+            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+          />
+        </div>
+        <div className="ml-3 text-sm leading-6">
+          <label htmlFor="dataFileOnly" className="font-medium text-gray-900">
+            Create Data File Only
+          </label>
+        </div>
       </div>
-      <button type="submit">Submit</button>
+      <div className="mt-6 flex items-center justify-end gap-x-6">
+        <SubmitButton>Submit</SubmitButton>
+      </div>
     </form>
   )
 }
