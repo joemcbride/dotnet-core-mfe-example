@@ -1,0 +1,7 @@
+bin
+obj
+.env
+dist
+.parcel-cache
+node_modules
+volume
