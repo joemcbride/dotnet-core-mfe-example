@@ -24,4 +24,8 @@ cd ./src/App.Website/frontend
 npm start
 ```
 
-Browse to `https://localhost:1234`
+Browse to `https://localhost:1234`.
+
+# GraphQL
+
+Browse to `/graphql/playground` to try out GraphQL queries.

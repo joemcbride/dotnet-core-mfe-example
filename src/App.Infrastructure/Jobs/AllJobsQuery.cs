@@ -14,14 +14,8 @@ public class AllJobsQuery : IQuery<IEnumerable<JobDto>>
     Task<IEnumerable<JobDto>> IQuery<IEnumerable<JobDto>>.Query(IDbConnectionFactory db)
     {
         IEnumerable<JobDto> jobs = jobsDatastore.All()
-            .Select(x => new JobDto
-            {
-                JobId = x.Id.Value,
-                Status = x.Status.ToString(),
-                ResultFile = x.ResultFile,
-                StartedAtTimeUtc = x.StartedAtTimeUtc,
-                EndedAtTimeUtc = x.EndedAtTimeUtc
-            }).ToList();
+            .Select(JobDto.From)
+            .ToList();
 
         return Task.FromResult(jobs);
     }

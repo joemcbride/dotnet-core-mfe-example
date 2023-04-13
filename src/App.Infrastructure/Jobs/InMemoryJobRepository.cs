@@ -22,9 +22,9 @@ public class InMemoryJobRepository : IJobRepository
         return Task.FromResult(_db.Get(id));
     }
 
-    public Task Save(Job job)
+    public Task<Job> Save(Job job)
     {
-        _db.Save(job);
-        return Task.CompletedTask;
+        var result = _db.Save(job);
+        return Task.FromResult(result);
     }
 }

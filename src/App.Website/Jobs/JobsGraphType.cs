@@ -56,10 +56,8 @@ public class JobsGraphType
             DataFileOnly = input.DataFileOnly
         };
 
-        await _commandDispatcher.Execute(command);
-
-        JobDto job = null;
-        return job;
+        var result = await _commandDispatcher.Execute<CreateJobCommand, JobDto>(command);
+        return result;
     }
 }
 

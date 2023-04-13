@@ -39,16 +39,16 @@ public class JobsDatastore
         }
     }
 
-    public void Save(Job job)
+    public Job Save(Job job)
     {
         if (job.Id == JobId.Empty)
         {
             var newJob = new Job(new JobId(Guid.NewGuid()), job.DataFileOnly, job.ResultFile, job.Status, job.StartedAtTimeUtc, job.EndedAtTimeUtc);
             _jobs[newJob.Id] = newJob;
+            return newJob;
         }
-        else
-        {
-            _jobs[job.Id] = job;
-        }
+
+        _jobs[job.Id] = job;
+        return job;
     }
 }

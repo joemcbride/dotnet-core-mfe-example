@@ -1,6 +1,6 @@
 namespace App.Domain;
 
-public class CreateJobCommandHandler : ICommandHandler<CreateJobCommand>
+public class CreateJobCommandHandler : ICommandHandler<CreateJobCommand, JobDto>
 {
     private readonly ISystemClock _clock;
     private readonly IJobRepository _jobRepository;
@@ -11,9 +11,11 @@ public class CreateJobCommandHandler : ICommandHandler<CreateJobCommand>
         _jobRepository = jobRepository;
     }
 
-    public async Task Handle(CreateJobCommand command)
+    public async Task<JobDto> Handle(CreateJobCommand command)
     {
         var newJob = new Job(JobId.Empty, command.DataFileOnly, null, JobStatus.Created, _clock.UtcNow(), null);
-        await _jobRepository.Save(newJob);
+        var result = await _jobRepository.Save(newJob);
+
+        return JobDto.From(result);
     }
 }
