@@ -22,7 +22,7 @@
           "ASPNETCORE_URLS": "https://localhost:5001",
         },
         "sourceFileMap": {
-          "/Views": "${workspaceFolder}/Views"
+          "/Views": "${workspaceFolder}/src/App.Website/Views"
         }
       },
     ]
