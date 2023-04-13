@@ -3,7 +3,7 @@ import { ApolloProvider } from '@apollo/client'
 import App from './App'
 import client from './apolloClient'
 
-if (window.initialData) {
+if (window.initialData && window.initialData !== '@Model') {
   console.log('initial data', window.initialData)
   const decoded = JSON.parse(atob(window.initialData))
   console.log('decoded', decoded)

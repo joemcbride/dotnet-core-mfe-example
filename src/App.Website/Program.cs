@@ -1,3 +1,4 @@
+using System.Text.Json;
 using App.Website.Chassis;
 using App.Website.Schema;
 
@@ -9,6 +10,12 @@ builder.Services.Configure<GraphQLOptions>(section);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDomainServices();
 builder.Services.AddGraphQLServices();
+
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+    options.SerializerOptions.PropertyNameCaseInsensitive = true;
+});
 
 builder.Services.AddAntiforgery(options =>
 {

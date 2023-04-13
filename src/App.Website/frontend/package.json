@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel ./index.html",
+    "start": "parcel ./index.html --https",
     "build": "npm run clean && npm run build:parcel && npm run copy",
     "build:parcel": "parcel build ./index.html --no-cache",
     "clean": "rm -rf ./dist && rm -rf ../wwwroot/*.*",
@@ -21,8 +21,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.12",
+    "formik": "^2.2.9",
     "graphql": "^16.6.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "yup": "^1.1.0"
   }
 }

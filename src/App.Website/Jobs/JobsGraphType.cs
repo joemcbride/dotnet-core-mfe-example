@@ -21,26 +21,26 @@ namespace App.Website.Jobs;
 
     type Jobs {
         all: [Job]!
-        create(input: CreateJobInput!): Job
     }
 
     extend type Query {
         jobs: Jobs!
     }
+
+    extend type Mutation {
+        createJob(input: CreateJobInput!): Job
+    }
 ")]
 public class JobsGraphType
 {
     private readonly IQueryDispatcher _queryDispatcher;
-    private readonly ICommandDispatcher _commandDispatcher;
     private readonly AllJobsQuery _allJobsQuery;
 
     public JobsGraphType(
         IQueryDispatcher queryDispatcher,
-        ICommandDispatcher commandDispatcher,
         AllJobsQuery query)
     {
         _queryDispatcher = queryDispatcher;
-        _commandDispatcher = commandDispatcher;
         _allJobsQuery = query;
     }
 
@@ -48,21 +48,5 @@ public class JobsGraphType
     {
         return _queryDispatcher.Execute(_allJobsQuery);
     }
-
-    public async Task<JobDto> Create(CreateJobInputDto input)
-    {
-        var command = new CreateJobCommand
-        {
-            DataFileOnly = input.DataFileOnly
-        };
-
-        var result = await _commandDispatcher.Execute<CreateJobCommand, JobDto>(command);
-        return result;
-    }
 }
 
-[GraphQLMetadata("CreateJobInput")]
-public class CreateJobInputDto
-{
-    public bool DataFileOnly { get; set; }
-}
