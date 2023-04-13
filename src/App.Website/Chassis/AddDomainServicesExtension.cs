@@ -64,8 +64,4 @@ public static class AddDomainServicesExtensions
             (candidateType.IsGenericType && candidateType.GetGenericTypeDefinition().Equals(openGenericInterfaceType)) ||
             candidateType.GetInterfaces().Any(i => i.IsGenericType && i.ImplementsOpenGenericInterface(openGenericInterfaceType));
     }
-
-    public static void Something(params Assembly[] assemblies)
-    {
-    }
 }
