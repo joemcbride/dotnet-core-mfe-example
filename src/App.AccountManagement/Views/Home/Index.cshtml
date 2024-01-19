@@ -1,0 +1,7 @@
+<h1>Home</h1>
+<a href="~/auth/logout">Logout</a>
+<h3>Claims</h3>
+@foreach (var claim in User.Claims)
+{
+    <div>@claim.Type: @claim.Value</div>
+}

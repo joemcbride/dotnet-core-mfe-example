@@ -25,5 +25,26 @@
           "/Views": "${workspaceFolder}/src/App.Website/Views"
         }
       },
+      {
+        "name": "account-management",
+        "type": "coreclr",
+        "request": "launch",
+        "preLaunchTask": "build",
+        "program": "${workspaceFolder}/src/App.AccountManagement/bin/Debug/net7.0/App.AccountManagement.dll",
+        "args": [],
+        "cwd": "${workspaceFolder}/src/App.AccountManagement",
+        "stopAtEntry": false,
+        "serverReadyAction": {
+          "action": "openExternally",
+          "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+        },
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "https://localhost:5003",
+        },
+        "sourceFileMap": {
+          "/Views": "${workspaceFolder}/src/App.AccountManagement/Views"
+        }
+      },
     ]
 }

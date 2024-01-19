@@ -38,7 +38,7 @@ export default function ListJobs() {
       </div>
       <div className="mt-8 flow-root">
         <div className="inline-block min-w-full">
-          <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded-lg">
+          <div className="overflow-hidden shadow ring-1 ring-black ring-opacity-5 sm:rounded">
             <Table>
               <Table.Header>
                 <Table.HeaderRow>Job Id</Table.HeaderRow>

@@ -1,7 +1,7 @@
-﻿using System.Text;
-using System.Text.Json;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
+using System.Text.Json;
 
 namespace App.Website.Home;
 
@@ -15,7 +15,7 @@ public class HomeController : Controller
         IAntiforgery antiforgery)
     {
         _logger = logger;
-        this._antiforgery = antiforgery;
+        _antiforgery = antiforgery;
     }
 
     public IActionResult Index()

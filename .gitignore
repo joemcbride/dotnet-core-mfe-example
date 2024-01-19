@@ -5,3 +5,5 @@ dist
 .parcel-cache
 node_modules
 volume
+.vs
+*.user
