@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Infrastructure", "src\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.Website", "src\App.Website\App.Website.csproj", "{CE09C389-F0C4-48A6-85EA-69C570BA1EBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.AccountManagement", "src\App.AccountManagement\App.AccountManagement.csproj", "{1D212564-E2DC-41E3-BE3B-09C0CD1A9E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.AccountManagement", "src\App.AccountManagement\App.AccountManagement.csproj", "{1D212564-E2DC-41E3-BE3B-09C0CD1A9E4D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App.WebService", "src\App.WebService\App.WebService.csproj", "{AB77EFE0-9F5D-4198-BDE3-D4A6B2351968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Authentication", "src\App.Authentication\App.Authentication.csproj", "{A20FD56B-0A41-4122-9A04-FF9440E7C04D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core", "src\App.Core\App.Core.csproj", "{46C03027-5048-41E8-A29B-565EF601065E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{1D212564-E2DC-41E3-BE3B-09C0CD1A9E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D212564-E2DC-41E3-BE3B-09C0CD1A9E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D212564-E2DC-41E3-BE3B-09C0CD1A9E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB77EFE0-9F5D-4198-BDE3-D4A6B2351968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB77EFE0-9F5D-4198-BDE3-D4A6B2351968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB77EFE0-9F5D-4198-BDE3-D4A6B2351968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB77EFE0-9F5D-4198-BDE3-D4A6B2351968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A20FD56B-0A41-4122-9A04-FF9440E7C04D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20FD56B-0A41-4122-9A04-FF9440E7C04D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20FD56B-0A41-4122-9A04-FF9440E7C04D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20FD56B-0A41-4122-9A04-FF9440E7C04D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C03027-5048-41E8-A29B-565EF601065E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C03027-5048-41E8-A29B-565EF601065E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C03027-5048-41E8-A29B-565EF601065E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C03027-5048-41E8-A29B-565EF601065E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

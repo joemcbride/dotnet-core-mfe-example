@@ -1,3 +1,4 @@
+using App.Authentication;
 using App.Website.Chassis;
 using App.Website.Schema;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -47,6 +48,13 @@ builder.Services
             var returnUrl = context.Request.GetEncodedUrl();
             context.Response.Redirect($"https://localhost:5003/auth/login?returnUrl={returnUrl}");
             return Task.CompletedTask;
+        };
+
+        _.Events.OnValidatePrincipal = async context =>
+        {
+            var claimsBuilder = context.HttpContext.RequestServices.GetRequiredService<IAuthenticationClaimsBuilder>();
+            var principal = await claimsBuilder.BuildClaimsPrincipal(context.Principal, context.Scheme.Name);
+            context.Principal = principal;
         };
     });
 

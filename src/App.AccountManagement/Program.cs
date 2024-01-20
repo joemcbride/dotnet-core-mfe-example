@@ -1,3 +1,5 @@
+using App.Authentication;
+using App.Core;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using System.Text.Json;
@@ -41,6 +43,9 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Auth", policy => policy.RequireAuthenticatedUser());
 });
+
+builder.Services.AddTransient<IJsonSerializer, App.Core.JsonSerializer>();
+builder.Services.AddTransient<ClaimsBuilder>();
 
 var app = builder.Build();
 
