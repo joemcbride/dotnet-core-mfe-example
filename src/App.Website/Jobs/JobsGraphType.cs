@@ -21,6 +21,7 @@ namespace App.Website.Jobs;
 
     type Jobs {
         all: [Job]!
+        job(jobId: ID!): Job
     }
 
     extend type Query {
@@ -35,18 +36,29 @@ public class JobsGraphType
 {
     private readonly IQueryDispatcher _queryDispatcher;
     private readonly AllJobsQuery _allJobsQuery;
+    private readonly GetJobQuery _getJobQuery;
 
     public JobsGraphType(
         IQueryDispatcher queryDispatcher,
-        AllJobsQuery query)
+        AllJobsQuery query,
+        GetJobQuery getJobQuery)
     {
         _queryDispatcher = queryDispatcher;
         _allJobsQuery = query;
+        _getJobQuery = getJobQuery;
     }
 
     public Task<IEnumerable<JobDto>> All()
     {
         return _queryDispatcher.Execute(_allJobsQuery);
+    }
+
+    [GraphQLMetadata("job")]
+    public async Task<JobDto> GetJob(Guid jobId)
+    {
+        _getJobQuery.JobId = new JobId(jobId);
+
+        return await _queryDispatcher.Execute(_getJobQuery);
     }
 }
 

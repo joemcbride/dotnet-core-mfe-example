@@ -10,6 +10,11 @@ public class JobDto
 
     public static JobDto From(Job job)
     {
+        if (job == null)
+        {
+            return null;
+        }
+
         return new JobDto
         {
             JobId = job.Id.Value,

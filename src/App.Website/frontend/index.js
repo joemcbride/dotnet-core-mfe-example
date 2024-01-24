@@ -5,7 +5,7 @@ import client from './apolloClient'
 
 if (window.initialData && window.initialData !== '@Model') {
   console.log('initial data', window.initialData)
-  const decoded = JSON.parse(atob(window.initialData))
+  const decoded = JSON.parse(atob(window.initialData, 'base64'))
   console.log('decoded', decoded)
   localStorage.setItem('csrf-token', decoded.csrfToken)
 }

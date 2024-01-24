@@ -10,5 +10,6 @@ public class CreateJobCommand
 public class CreateJobCommandValidator : AbstractValidator<CreateJobCommand>
 {
     public CreateJobCommandValidator()
-    { }
+    {
+    }
 }

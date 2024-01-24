@@ -30,7 +30,7 @@
         "type": "coreclr",
         "request": "launch",
         "preLaunchTask": "build",
-        "program": "${workspaceFolder}/src/App.WebService/bin/Debug/net8.0/App.Website.dll",
+        "program": "${workspaceFolder}/src/App.WebService/bin/Debug/net8.0/App.WebService.dll",
         "args": [],
         "cwd": "${workspaceFolder}/src/App.WebService",
         "stopAtEntry": false,
